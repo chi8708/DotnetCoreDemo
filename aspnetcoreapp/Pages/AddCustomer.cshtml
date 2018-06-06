@@ -1,0 +1,19 @@
+@page
+@model AddCustomer
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"]="add Customer";
+}
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+ <body>
+   <p>Customer</p>
+   <div asp-validation-summary="All"></div>
+   <form method="POST">
+       <div>name: <input asp-for="Customer.Name" /></div>
+       <input type="submit"/>
+   </form>
+ </body>
+</html>
