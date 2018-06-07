@@ -5,10 +5,10 @@ using aspnetcoreapp.Entity;
 using System;
 namespace aspnetcoreapp.Pages
 {
-    public class AddCustomer:PageModel
+    public class CustomerAdd:PageModel
     {
         private  readonly AppDbContext _db=null;
-        public AddCustomer(AppDbContext db)
+        public CustomerAdd(AppDbContext db)
         {
             _db=db;
         }
@@ -26,7 +26,7 @@ namespace aspnetcoreapp.Pages
             _db.Customers.Add(Customer);
             await _db.SaveChangesAsync();
 
-             return RedirectToPage("/Index2");
+             return RedirectToPage("/CustomerIndex");
 
         }
     }

@@ -1,0 +1,16 @@
+@page "{id:int}" 
+@model CustomerEdit 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h1>
+    eidtCustomer-@Model.Customer.Id
+</h1>
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="Customer.Id"/>
+    <div class="form-group">
+        <label asp-for="Customer.Name"></label>
+        <input type="text" asp-for="Customer.Name" class="form-control" placeholder="Name">
+        <span asp-validation-for="Customer.Name"></span>
+    </div>
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
