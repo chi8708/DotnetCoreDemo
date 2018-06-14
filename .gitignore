@@ -1,2 +1,5 @@
 /aspnetcoreapp/bin
 /aspnetcoreapp/obj
+/aspnetcoreapp/*.csproj
+/webapi/bin
+/webapi/obj
