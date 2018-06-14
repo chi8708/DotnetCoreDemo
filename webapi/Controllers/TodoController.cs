@@ -8,7 +8,7 @@ using webapi.Model;
 
 namespace webapi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TodoController : ControllerBase
     {
@@ -21,14 +21,12 @@ namespace webapi.Controllers
 
 
         [HttpPost]
-        [Route("GetAll")]
         public ActionResult<IList<TodoItem>> GetAll()
         {
-           return  _db.TodoItem.ToList();
+            return _db.TodoItem.ToList();
         }
 
-        [HttpGet]
-        [Route("GetById/{id}")]
+        [HttpGet("{id}")]
         public ActionResult<TodoItem> GetById(long id)
         {
             return _db.TodoItem.FirstOrDefault(p=>p.Id==id);
@@ -36,7 +34,6 @@ namespace webapi.Controllers
 
         // POST api/values
         [HttpPost]
-        [Route("Add")]
         public void Add([FromBody] TodoItem model)
         {
             _db.TodoItem.Add(model);
